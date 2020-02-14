@@ -1,0 +1,37 @@
+{
+  "dbConections": {
+    "BancoBogota":{	
+			"ip": "112.30.20.1",
+			"sid": "novodes",
+			"user": "adminserver",
+			"password": 12345,
+			"port": 1398
+    }
+  },
+  "reports": {
+    "Accounts":{
+      "reportName": "List of adquired Accounts",
+      "outputPath": "C://Users//asanchez//Documents//Accounts.csv",
+      "conection": "Pichincha",
+      "query": "SELECT * from transaction",
+      "separator": "|",
+      "headers": true
+    },
+    "TopTransactions":	{
+      "reportName": "Top of transactions measured by item",
+      "outputPath": "/reports/aml/",
+      "conection": "BancoBogota",
+      "query": "select col1,col2,col3 from tmp_traffic",
+      "separator": "|",
+      "headers": true
+    },
+    "FraudSuspend": {
+      "reportName": "List of suspended transactions for suspicious activity",
+      "outputPath": "/reports/aml/",
+      "conection": "Pichincha",
+      "query": "select col1,col2,col3 from tmp_traffic",
+      "separator": "|",
+      "headers": true      
+    }
+  }
+}
